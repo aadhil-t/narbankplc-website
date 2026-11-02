@@ -1,0 +1,234 @@
+.news-section {
+  padding: 88px 0;
+  padding-top: 235px;
+  background: #fff;
+  &.news-sec-cmn{
+    padding: 88px 0;
+    padding-top: 100px;
+    @media (max-width: 768px) {
+      padding-top: 50px;
+    }
+}
+  @media (max-width: 768px) {
+    padding: 50px 0;
+  }
+
+  .news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+    gap: 16px;
+
+    .left {
+      max-width: 70%;
+    }
+
+    .tag {
+      font-family: "Inter";
+      font-weight: 600;
+      font-size: 20px;
+      text-transform: uppercase;
+      color: #00a76d;
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+
+    h2 {
+      font-family: "Inter";
+      font-weight: 700;
+      font-size: 35px;
+      color: #1d1d1b;
+    }
+  }
+
+  .news-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .details-btn{
+    color: #000;
+  }
+}
+
+/* ===============================
+   NEWS CARD
+================================ */
+.news-card {
+  background: #eef6dc;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .img-wrap {
+    height: 170px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
+    }
+  }
+
+  .content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    h3 {
+      font-family: "Inter";
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 1.2;
+      color: #252a27;
+      margin-bottom: 0;
+    }
+
+    p {
+      font-family: "Inter";
+      font-size: 16px;
+      line-height: 23px;
+      margin-top: 9px;
+      margin-bottom: auto;
+      color: #252a27;
+    }
+  }
+
+  .card-footer {
+    margin-top: 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .date {
+      font-family: "Inter";
+      font-size: 15px;
+      line-height: 28px;
+      color: rgba(37, 42, 39, 0.8);
+    }
+
+    /* ===============================
+       ARROW BUTTON
+    ================================ */
+    .arrow {
+      position: relative;
+      width: 33px;
+      height: 33px;
+      border-radius: 50%;
+      background: #00a76d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: background 0.3s ease;
+
+      img {
+        width: 14px;
+        height: auto;
+        position: relative;
+        z-index: 2;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                    opacity 0.35s ease;
+      }
+
+      /* second arrow */
+      &::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: url("../images/home/newsarrow.svg") no-repeat center;
+        background-size: contain;
+        transform: translateX(-120%);
+        opacity: 0;
+        transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                    opacity 0.35s ease;
+      }
+    }
+  }
+
+  /* ===============================
+     HOVER ARROW ANIMATION
+  ================================ */
+  &:hover {
+    .arrow img {
+      transform: translateX(120%);
+      opacity: 0;
+    }
+
+    .arrow::after {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .news-section {
+    padding-top: 240px;
+
+    .news-header {
+      align-items: flex-start;
+
+      .left {
+        max-width: 100%;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+    }
+
+    .news-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .news-section {
+    padding-top: 220px;
+
+    .news-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .news-cards {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .news-section {
+    padding-top: 200px;
+
+    .news-header h2 {
+      font-size: 24px;
+    }
+
+    .news-card .img-wrap {
+      height: 160px;
+    }
+  }
+}
+

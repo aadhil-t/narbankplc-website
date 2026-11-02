@@ -1,0 +1,406 @@
+/// NEW STYLE ///
+.banner-section {
+  // height: 800px;
+  // padding-top: 30px;
+  height: 673px;
+  padding-top: 0;
+  background: linear-gradient(90deg, #0baf78, #0c3e75);
+  overflow: hidden;
+
+  /* ===============================
+     GRID
+     =============================== */
+  .banner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 120px;
+    height: 673px;
+    align-items: center;
+
+    @media (max-width: 1024px) {
+      gap: 60px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      text-align: center;
+      align-items: unset;
+      height: auto;
+      gap: 30px;
+    }
+    @media (max-width: 500px) {
+      gap: 20px;
+    }
+  }
+
+  /* ===============================
+     LEFT CONTENT
+     =============================== */
+  .banner-left {
+    @media (max-width: 768px) {
+      padding-bottom: 25px;
+    }
+    h1 {
+      font-family: "Inter";
+      font-weight: 700;
+      font-size: 75px;
+      line-height: 75px;
+      margin-bottom: 15px;
+      color: #fff;
+
+      @media (max-width: 1200px) {
+        font-size: 60px;
+        line-height: 60px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 45px;
+        line-height: 45px;
+      }
+    }
+
+    p {
+      font-family: "Inter";
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 45px;
+      color: #f1ffc9;
+
+      @media (max-width: 1200px) {
+        font-size: 25px;
+        line-height: 35px;
+      }
+      @media (max-width: 600px) {
+        font-size: 17px;
+        line-height: 23px;
+      }
+
+      span {
+        color: #ffff0a;
+        font-weight: 700;
+      }
+    }
+
+    .video-p {
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 17px;
+      line-height: 28px;
+      letter-spacing: 0%;
+      max-width: 67rem;
+      color: #DADADA;
+
+      @media (max-width: 1200px) {
+        font-size: 25px;
+        line-height: 35px;
+      }
+      @media (max-width: 600px) {
+        font-size: 17px;
+        line-height: 23px;
+      }
+    }
+
+    .banner-btns {
+      margin-top: 50px;
+      display: flex;
+      gap: 15px;
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
+      @media (max-width: 560px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        margin-top: 24px;
+      }
+    }
+  }
+     .video-head{
+      bottom: -85px;
+      position: absolute;
+      @media (max-width:  465px) {
+        bottom: -150px;
+        padding: 20px;
+        left: 0;
+      }
+    }
+
+  /* ===============================
+     RIGHT IMAGE + BADGES
+     =============================== */
+  .banner-right {
+    .img-wrapper {
+      position: relative;
+      display: inline-block;
+      overflow: visible;
+
+      .img-inner-wrap {
+        position: relative;
+        z-index: 1;
+
+        .main-img {
+          width: 100%;
+          max-width: 564px;
+          max-height: 516px;
+          display: block;
+
+          @media (max-width: 768px) {
+            // max-height: 400px;
+            max-height: 315px;
+          }
+          @media (max-width: 500px) {
+            max-height: 320px;
+          }
+        }
+      }
+
+      /* BASE BADGE STYLE */
+      .float-badge {
+        position: absolute;
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        z-index: 5;
+        cursor: pointer;
+        transition: transform 0.35s ease, filter 0.35s ease;
+    will-change: transform;
+  transition: transform 0.15s ease-out;
+      }
+
+      /* ===============================
+         INDIVIDUAL HOVER MOVEMENTS
+         =============================== */
+
+      /* SUSU – up-left */
+      .badge-susu {
+        top: -50px;
+        right: 65%;
+        width: 88px;
+        height: 88px;
+        @media (max-width: 600px) {
+          top: -30px;
+          right: 68%;
+          width: 60px;
+          height: 60px;
+        }
+        &:hover {
+          transform: translate(-14px, -14px) rotate(-4deg) scale(1.06);
+          filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.25));
+        }
+      }
+
+      /* AGRIC – up-right */
+      .badge-agric {
+        top: 70px;
+        right: 25px;
+        width: 108px;
+        height: 108px;
+        @media (max-width: 768px) {
+          top: 70px;
+          right: 0px;
+          width: 95px;
+          height: 95px;
+        }
+        @media (max-width: 600px) {
+          top: 70px;
+          right: 25px;
+          width: 80px;
+          height: 80px;
+        }
+        &:hover {
+          transform: translate(14px, -12px) rotate(4deg) scale(1.06);
+          filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.25));
+        }
+      }
+
+      /* BUSINESS – down-left */
+      .badge-business {
+        top: 120px;
+        left: -20px;
+        width: 135px;
+        height: 135px;
+        @media (max-width: 768px) {
+          top: 85px;
+          left: -55px;
+          width: 107px;
+          height: 107px;
+        }
+        @media (max-width: 600px) {
+          top: 127px;
+          left: -10px;
+          width: 80px;
+          height: 80px;
+        }
+        &:hover {
+          transform: translate(-14px, 12px) rotate(-3deg) scale(1.06);
+          filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.25));
+        }
+      }
+
+      /* SALARY – down-right */
+      .badge-salary {
+        bottom: 25px;
+        right: 160px;
+        width: 135px;
+        height: 135px;
+        @media (max-width: 768px) {
+          bottom: 15px;
+          right: 105px;
+          width: 107px;
+          height: 107px;
+        }
+        @media (max-width: 600px) {
+          bottom: 40px;
+          right: 160px;
+          width: 80px;
+          height: 80px;
+        }
+        &:hover {
+          transform: translate(14px, 14px) rotate(3deg) scale(1.06);
+          filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.25));
+        }
+      }
+    }
+  }
+  .primary-btn {
+    &:hover {
+      color: #000;
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+      padding: 17px 28px;
+    }
+  }
+  
+  // secondary btn //
+  .secondary-btn {
+    @media (max-width: 1024px) {
+      width: 100%;
+      justify-content: center;
+      padding: 18px 20px;
+      font-size: 16px;
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+      justify-content: center;
+      padding: 13px 28px;
+    }
+  }
+  .secondary-btn-wrapper{
+        @media (max-width: 600px) {
+      width: 100%;
+    }
+  }
+}
+
+/* ===============================
+   VIDEO SLIDE
+   =============================== */
+
+.video-slide {
+  padding: 0;
+}
+
+.video-bg {
+  width: 100vw;
+  // height: 800px;
+  height: 100vh;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  overflow: hidden;
+}
+
+.video-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* YouTube iframe */
+.banner-iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 100vw;
+  height: 56.25vw;   /* 16:9 */
+
+  min-height: 100vh;
+  min-width: 177.77vh;
+
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Dark overlay */
+.video-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* Content above video */
+.video-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ===============================
+   SWIPER POLISH
+   =============================== */
+/* ===============================
+   CUSTOM BANNER PAGINATION
+   =============================== */
+
+.bannerSwiper {
+
+  .swiper-pagination {
+    position: absolute;
+    top: 581px;
+    // left: 9%;
+    left: 19%;
+    display: flex;
+    gap: 5px;
+    z-index: 20;    
+    pointer-events: auto;
+
+    @media (max-width: 1024px) {
+      top: 570px;
+      left: 53%;
+      transform: translateX(-50%);
+    }
+    @media (max-width: 768px) {
+      // left: 50%;
+      // transform: translateX(-50%);
+      // bottom: 20px;
+      display: none;
+    }
+  }
+
+  .swiper-pagination-bullet {
+    width: 28px;
+    height: 4px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.4);
+    opacity: 1;
+    transition: all 0.3s ease;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 20px;
+    background: #FFFF0A;
+  }
+}
+
+/* ===============================
+   MOBILE SAFETY
+   =============================== */
+
+@media (hover: none) {
+  .float-badge {
+    transition: transform 0.2s ease-out;
+  }
+}

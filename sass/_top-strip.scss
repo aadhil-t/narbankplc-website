@@ -1,0 +1,59 @@
+.strip-info-bar {
+  background: #0b6f63; // dark teal
+  padding: 11px 0;
+  font-size: 13px;
+  @media (max-width:600px) {
+    display: none;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: center;
+    gap: 28px; // controlled spacing like screenshot
+    justify-content: flex-end;
+
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+
+  .info-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #DADADA;
+
+    span {
+      line-height: 1;
+      font-family: "Inter";
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 15px;
+      line-height: 100%;
+      letter-spacing: 0%;
+      white-space: nowrap;
+      color: #DADADA;
+    }
+  }
+
+  .icon {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .icon.location {
+    background-image: url("../images/header/loc.svg");
+  }
+
+  .icon.mail {
+    background-image: url("../images/header/mail.svg");
+  }
+
+  .icon.phone {
+    background-image: url("../images/header/call.svg");
+  }
+}

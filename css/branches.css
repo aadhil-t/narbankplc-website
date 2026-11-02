@@ -1,0 +1,126 @@
+.branches-section {
+  background: #fff;
+  padding: 100px 0;
+}
+.branches-section .container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.branches-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 80px 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+/* LEFT */
+.branches-left .swiper {
+  border-radius: 14px;
+  overflow: hidden;
+}
+.branches-left img {
+  width: 100%;
+  height: 360px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.branches-left .caption {
+  display: block;
+  font-size: 13px;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* RIGHT */
+.branches-right h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.branches-right .intro {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+/* ACTIVE CONTENT */
+.branch-content {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 26px;
+}
+.branch-content .dot {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  background: #1fb978;
+  border-radius: 50%;
+}
+.branch-content h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.branch-content p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 14px;
+}
+.branch-content .thumbs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+.branch-content .thumbs img {
+  width: 64px;
+  height: 44px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ACCORDION */
+.branch-accordion {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.accordion-item h5 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.accordion-item .icon {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #1fb978;
+  opacity: 0.4;
+}
+.accordion-item.active h5 {
+  font-weight: 600;
+}
+.accordion-item.active .icon {
+  opacity: 1;
+}

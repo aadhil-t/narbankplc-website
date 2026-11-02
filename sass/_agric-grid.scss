@@ -1,0 +1,246 @@
+
+.agric-features-section {
+  background: #f3f8e6;
+  padding: 100px 0;
+  @media (max-width: 768px) {
+      padding: 40px 0;
+  }
+  .container {
+    max-width: 1250px;
+    margin: auto;
+  }
+
+  .features-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(0, 0, 0, 0.08);
+    }
+
+    &::before {
+      left: 33.333%;
+    }
+
+    &::after {
+      left: 66.666%;
+    }
+  }
+
+  /* horizontal divider */
+
+  .features-left,
+  .feature-card {
+      padding: 40px 50px;
+      &:nth-child(1){
+          border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+       }
+      &:nth-child(2){
+          border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      @media (max-width: 1024px) {
+           &:nth-child(1){
+        border-bottom: unset; 
+      }
+      &:nth-child(2){
+        border-bottom: unset; 
+      }
+    }
+}
+
+.features-left{
+    padding: 40px 0;
+}
+
+
+  .features-left {
+    .label {
+        font-weight: 600;
+        font-style: Semi Bold;
+        font-size: 20px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: rgba(0, 167, 109, 1);
+        text-transform: uppercase;
+        margin-bottom: 14px;
+        display: inline-block;
+        @media (max-width: 768px) {
+            font-size: 14px;
+        }
+    }
+
+    h3 {
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 1.2;
+        letter-spacing: 0%;
+        font-style: Bold;
+        color: #1d1d1b;
+        margin-bottom: 12px;
+    }
+
+    .intro-text {
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0%;
+        color: rgba(37, 42, 39, 1);
+    }
+  }
+
+  .features-right {
+    display: contents;
+  }
+
+  .feature-card {
+    h4 {
+        font-weight: 600;
+        font-style: Semi Bold;
+        font-size: 20px;
+        line-height: 1.2;
+        letter-spacing: 0%;
+        max-width: 280px;
+        margin-bottom: 15px;
+        padding-top: 30px;
+    }
+
+    p {
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 28px;
+        letter-spacing: 0%;
+        max-width: 30rem;
+        margin: 0;
+        color: rgba(37, 42, 39, 1);
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+    }
+    &:nth-child(3){
+        padding: 40px 0;
+        @media (max-width: 768px) {
+            padding: 28px 22px;
+        }
+        @media (max-width: 480px) {
+            padding: 10px 0px;
+        }
+    }
+  }
+}
+
+/* ================= TABLET (≤ 1024px) ================= */
+@media (max-width: 1024px) {
+  .agric-features-section {
+
+    .features-wrap {
+      grid-template-columns: repeat(2, 1fr);
+
+      /* adjust vertical dividers */
+      &::before {
+        left: 50%;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    /* horizontal divider for first row (2 items) */
+    .features-wrap > * {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .features-wrap > *:nth-last-child(-n + 2) {
+      border-bottom: none;
+    }
+
+    .features-left,
+    .feature-card {
+      padding: 32px 26px;
+    }
+
+    .feature-card {
+      h4,
+      p {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+/* ================= MOBILE (≤ 768px) ================= */
+@media (max-width: 768px) {
+  .agric-features-section {
+    .features-wrap {
+      grid-template-columns: 1fr;
+
+      /* remove vertical dividers */
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    .features-wrap > * {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .features-wrap > *:last-child {
+      border-bottom: none;
+    }
+
+    .features-left,
+    .feature-card {
+      padding: 28px 22px;
+    }
+
+    .features-left {
+      h3,
+      .intro-text {
+        max-width: 100%;
+      }
+    }
+
+    .feature-card {
+      h4,
+      p {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+/* ================= SMALL MOBILE (≤ 480px) ================= */
+@media (max-width: 480px) {
+  .agric-features-section {
+    
+    .features-left,
+      .feature-card {
+      padding: 10px 0;
+    }
+    .features-left h3 {
+      font-size: 28px;
+    }
+
+    .feature-card h4 {
+      font-size: 15px;
+    }
+
+    .feature-card p {
+      font-size: 13px;
+      line-height: 22px;
+    }
+  }
+  
+}

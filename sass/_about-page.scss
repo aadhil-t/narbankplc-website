@@ -1,0 +1,257 @@
+.mv-section {
+  background: radial-gradient(circle at 70% 0%, #3b2a6f 0%, #0b0d2a 70%);
+  padding: 140px 0 120px;
+  color: #fff;
+  @media (max-width: 768px) {
+    padding: 50px 0 50px;
+  }
+}
+
+/* =============================
+   TOP LAYOUT
+============================= */
+.mv-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 90px;
+  padding-bottom: 88px;
+  border-bottom: 1px solid rgba(188, 229, 75, 0.2);
+  @media (max-width: 768px) {
+    padding-bottom: 50px;
+  }
+}
+
+/* columns */
+.mv-col {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* LEFT */
+.mv-col.left {
+  width: 50%;
+  padding-left: 10px;
+  @media (max-width: 768px) {
+    width: auto;
+  }
+}
+
+/* RIGHT */
+.mv-col.right {
+  width: 50%;
+  padding-right: 10px;
+  margin-top: 48px;
+    @media (max-width: 768px) {
+    width: auto;
+  }
+}
+
+/* =============================
+   CARDS
+============================= */
+.mv-card {
+  background: linear-gradient(108.84deg, #2A176D 8.42%, #00A76D 100.27%);
+  border-radius: 25px;
+  padding: 40px 40px;
+  width: 580px;
+  height: 275px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  @media (max-width: 768px) {
+    height: auto
+  }
+  h4 {
+    font-weight: 600;
+    font-style: Semi Bold;
+    font-size: 30px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    margin-bottom: 12px;
+  }
+
+  p {
+    font-weight: 300;
+    font-style: Regular;
+    font-size: 17px;
+    line-height: 28px;
+    letter-spacing: 0%;
+    opacity: 0.95;
+    max-width: 48rem;
+  }
+}
+
+/* vision overlaps image slightly */
+.mv-card.vision {
+  margin-top: -22px;
+}
+
+/* =============================
+   IMAGES
+============================= */
+.mv-img {
+  width: 400px;
+  height: 243px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* mission image indented */
+.mv-col.left .mv-img {
+  margin-left: 150px;
+  margin-top: -15px;
+}
+
+/* vision image aligned right */
+.mv-col.right .mv-img {
+    margin-left: 60px;
+}
+
+.mv-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* green dot EXACT */
+.has-dot .green-dot-right {
+  position: absolute;
+  top: -55px;
+  right: 85px;
+  width: 100px;
+  height: 100px;
+  background: rgba(7, 92, 95, 1);
+  border-radius: 50%;
+  @media (max-width: 425px) {
+    top: -70px;
+    right: 0;
+  }
+}
+.has-dot .green-dot-left {
+  position: absolute;
+  bottom: -40px;
+  left: 70px;
+  width: 163px;
+  height: 163px;
+  background: rgba(60, 183, 58, 0.33);
+  border-radius: 50%;
+  @media (max-width: 425px) {
+    bottom: -65px;
+    left: 0;
+  }
+}
+
+/* =============================
+   VALUES SECTION
+============================= */
+.values {
+  text-align: center;
+
+  h2 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 35px;
+    line-height: 1.2;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 56px;
+    margin-top: 88px;
+    @media (max-width: 768px) {
+      margin-top: 40px;
+      font-size: 28px;
+      text-align: start;
+    }
+  }
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 21px;
+}
+
+/* cards */
+.value-card {
+  background: linear-gradient(
+    90deg,
+    rgba(60, 183, 58, 0.3) 0%,
+    rgba(0, 167, 109, 0.3) 100%
+  );
+  border-radius: 16px;
+  padding: 30px 30px 50px;
+  text-align: left;
+  min-height: 376px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  backdrop-filter: blur(12px);
+  transition: background 0.4s ease; // ✅ smooth
+
+  /* ✅ CORRECT HOVER */
+  &:hover {
+    background: linear-gradient(90deg, #3CB73A 0%, #00A76D 100%);
+  }
+
+  img {
+    width: 40px;  
+    height: 40px;
+    margin-bottom: 18px;
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 28px;
+    opacity: 0.9;
+  }
+}
+
+/* active card stays filled */
+// .value-card.active {
+//   background: linear-gradient(90deg, #3CB73A 0%, #00A76D 100%);
+// }
+
+
+/* =============================
+   RESPONSIVE (kept clean)
+============================= */
+@media (max-width: 992px) {
+  .mv-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .mv-col {
+    width: 100%;
+    align-items: center;
+  }
+
+  .mv-card,
+  .mv-img {
+    width: 100%;
+    max-width: 420px;
+    margin-left: 0 !important;
+  }
+
+  .mv-card.vision {
+    margin-top: 0;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}
